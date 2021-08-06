@@ -1,7 +1,8 @@
 #!/bin/bash
 
-#------------------HELP-------------------
-#You have to put the username you want to delete next to the command: ./borrar_usuaris "username"
+#-------------------------------------------------------------------------------HELP----------------------------------------------------------------------------------
+#You have to put the username you want to delete next to the command: ./user_remover "username"
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #Colours
 greenColour="\e[0;32m\033[1m"
@@ -18,17 +19,18 @@ Nom=$1
 if [ -z "$Nom" ]
 then
 
-echo -e "\n${redColour}¡¡YOU DIDN'T PUT THE USERNAME YOU WANT TO DELETE NEXT TO THE COMMAND!!${endColour}\n\n${blueColour}Indicate the username that you want to delete next to the command like this: ./borrar_usuaris "username"${endColour}\n"
+echo -e "\n${redColour}¡¡YOU DIDN'T PUT THE USERNAME YOU WANT TO DELETE NEXT TO THE COMMAND!!${endColour}\n\n${blueColour}Indicate the username that you want to delete next to the command like this: ./user_remover <username>${endColour}\n"
 
 else
 
 sudo userdel $Nom
 
-echo -e "\n${greenColour}User deleted${endColour}\n"
+echo -e "\n${greenColour}[*] User deleted${endColour}"
 
 sudo rm -rf $Nom
 
-echo -e "\n${greenColour}File deleted${endColour}\n"
+echo -e "\n${greenColour}[*] File deleted${endColour}\n"
 
 fi
+
 

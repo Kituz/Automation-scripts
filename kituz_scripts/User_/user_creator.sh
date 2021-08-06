@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#------------------HELP-------------------
-#You have to put the username you want to create next to the comand: sudo ./crear_usuaris "username"
-
+#--------------------------------------------------------------------------HELP---------------------------------------------------------------------------------------
+#You have to put the username you want to create next to the comand: sudo ./user_creator "username"
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 #Colours
@@ -20,28 +20,28 @@ Nom=$1
 if [ -z "$Nom" ]
 then
 
-echo -e "\n${redColour}¡¡YOU DIDN'T PUT THE USERNAME YOU WANT TO CREATE NEXT TO THE COMMAND!!${endColour}\n\n${blueColour}Indicate the username that you want to create next to the command like this: ./crear_usuaris username${endColour}\n"
+echo -e "\n${redColour}¡¡YOU DIDN'T PUT THE USERNAME YOU WANT TO CREATE NEXT TO THE COMMAND!!${endColour}\n\n${blueColour}Indicate the username that you want to create next to the command like this: ./user_creator <username>${endColour}\n"
 
 else
 
 sudo mkdir $Nom
 
-echo -e "\n${greenColour}File created${endColour}\n"
+echo -e "\n${greenColour}[*] File created${endColour}\n"
 
 sudo useradd -d /home/$Nom -s /bin/bash $Nom
 
-echo -e "\n${greenColour}User created, Folder indicated, Shell indicated${endColour}\n"
+echo -e "\n${greenColour}[*] User created, Folder indicated, Shell indicated${endColour}\n"
 
 sudo passwd $Nom
 
-echo -e "\n${greenColour}Password indicated${endColour}\n"
+echo -e "\n${greenColour}[*] Password indicated${endColour}\n"
 
 sudo chown $Nom $Nom
 
-echo -e "\n${greenColour}Usuari asignat com a propietari i grup al seu directori${endColour}\n"
+echo -e "\n${greenColour}[*] User asignated as an owner and group to its directory${endColour}\n"
 
 chgrp $Nom $Nom
 
-echo -e "\n${greenColour}Grups asignats${endColour}\n"
+echo -e "\n${greenColour}Groups assigned${endColour}\n"
 
 fi
